@@ -1,31 +1,19 @@
 package db_sql_benchmark
 
 import (
-	"database/sql"
 	"fmt"
-	"log"
 	"testing"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gocraft/dbr"
 )
 
-const MysqlDSN = "root:111@tcp(docker:3306)/test"
-
 //
 // Select benchmarks
 //
 
-func mysqlConn() *sql.DB {
-	db, err := sql.Open("mysql", MysqlDSN)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	return db
-}
-
 func dbrSess() *dbr.Session {
-	return dbr.NewConnection(mysqlConn(), nil).NewSession(nil)
+	return dbr.NewConnection(nil, nil).NewSession(nil)
 }
 
 func BenchmarkDbrSelectSimple(b *testing.B) {
