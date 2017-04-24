@@ -8,7 +8,7 @@ A comparison of popular Go SQL query builders. Provides feature list and benchma
 1. dbr: https://github.com/gocraft/dbr
 2. squirrel: https://github.com/lann/squirrel
 3. sqrl: https://github.com/elgris/sqrl
-4. gocu: github.com/doug-martin/goqu - just for SELECT query
+4. goqu: https://github.com/doug-martin/goqu - just for SELECT query
 
 
 # Feature list
